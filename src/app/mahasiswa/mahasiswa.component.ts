@@ -15,16 +15,17 @@ export class MahasiswaComponent implements OnInit, AfterViewInit {
 
   constructor(private http: HttpClient) {}
 
-  ngAfterViewInit(): void {}
-
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.table1 = $('#table1').DataTable();
+
     this.bind_mahasiswa();
   }
 
+  ngOnInit(): void {}
+
   bind_mahasiswa(): void {
     this.http
-      .get('https//stmikpontianak.net/011100862/tampilMahasiswa.php')
+      .get('https://stmikpontianak.net/011100862/tampilMahasiswa.php')
       .subscribe((data: any) => {
         console.log(data);
 
