@@ -1,4 +1,4 @@
-import { OnInit, AfterViewInit, Component, Renderer2 } from '@angular/core';
+import { OnInit, AfterViewInit, Component } from '@angular/core';
 
 declare const $: any;
 
@@ -13,14 +13,14 @@ export class MahasiswaComponent implements OnInit, AfterViewInit {
   data: any;
   table1: any;
 
-  constructor(private http: HttpClient, private renderer: Renderer2) {}
+  constructor(private http: HttpClient) {}
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit(): void {}
+
+  ngOnInit(): void {
     this.table1 = $('#table1').DataTable();
     this.bind_mahasiswa();
   }
-
-  ngOnInit(): void {}
 
   bind_mahasiswa(): void {
     this.http
